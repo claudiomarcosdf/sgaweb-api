@@ -1,0 +1,224 @@
+*** LOGIN ***
+
+{
+	login(email:"admin@admin.com" senha:"123456") {
+    id nome token
+  }
+}
+
+*** REGISTRAR NOVO USUÁRIO ***
+
+mutation{
+  register(dados: {
+    nome: "Teste3"
+    email: "teste3@teste.com"
+    senha: "123456"
+    conformaSenha: "123456"
+  }){
+    id nome email token createdAt
+  }
+}
+
+=> HTTP HEADERS
+*  {
+*     "Authorization":"Bearer inserir o token aqui"
+*  }
+
+*** NOVO ASSOCIADO ***
+
+mutation {
+  createAssociado(
+    data: {
+      matricula: "144.005"
+      nome: "Ana Alameida Barros"
+      dados_pessoais: {
+        dtnascimento: "1968-09-17"
+        cpf: "125.859.558/01"
+        sexo: "Feminino"
+        estadocivil: "Casado(a)"
+      }
+      endereco: {
+        cep: "74002-999"
+        logradouro: "Quadra dos patos..."
+        cidade: "Pateiras"
+        bairro: "Sem rumo"
+        estado: "RJ"
+        contatos: {
+          celular1: "7778-0202"
+          celular2: "9987-5897"
+          telefoneresidencia: ""
+          telefonetrabalho: ""
+          email: "ana@email.com"
+        }
+      }
+      empresa: {
+        codigo: 525
+        nome: "Tribunal Regional"
+        sigla: "TR"
+        orgao: ""
+        dtadmissao: "2000-04-27"
+        aposentado: false
+      }
+    }
+  ) {
+    id
+    nome
+    matricula
+    matsindicato
+  }
+}
+
+*** EDIT ASSOCIADO ***
+(Dá pra alterar apenas campos específicos)
+
+mutation {
+  updateAssociado(
+    id: "5fdbd14567dfbe2f90a1da2e", 
+    data: {
+      status: INATIVO
+    }
+  )
+  {
+    id
+    nome
+    matricula
+    matsindicato
+    status
+    dtfiliacao
+  }
+}
+
+*** REMOVE ASSOCIADO ***
+
+mutation {
+  deleteAssociado(
+    id: "5fdc0a8fa9b99333ac8beadf"
+  )
+}
+
+*** LISTA TODOS ***
+
+{
+  associados {
+    nome
+    matricula
+  }
+}
+
+*** BUSCA POR ID ***
+
+{
+  associado(
+    id: "5fdbd14567dfbe2f90a1da2e"
+  )
+  {
+    matricula
+    matsindicato
+    nome
+    status
+    
+  }
+}
+
+*** BUSCA COM STATUS ***
+
+{
+  activeAssociados(status: "ATIVO") {
+    nome
+    matricula
+    dados_pessoais {
+      sexo
+      dtnascimento
+    }
+  }
+}
+
+*** NOVO RECEBIMENTO ***
+
+mutation {
+  insertRecebimento(
+    data: {
+      orgao: "001"
+      ano: "2009"
+      mes: "04"
+      matricula: "00256588"
+      cpf: "60184574153"
+      nome: "CLAUDIO MARCOS"
+      controle: "001"
+      lotacao: "921000000901"
+      rubrica: "40392"
+      parcela: "099"
+      valor: 123.42
+      
+    }
+  )
+}
+
+*** BUSCAS RECEBIMENTOS ***
+
+{
+  recebimentoPeriodo(ano: "2009", mes: "04")
+  {
+    orgao
+    ano
+    mes
+    matricula
+    cpf
+    valor
+  }
+}
+
+{
+  recebimentoOrgao(orgao: "001")
+  {
+    orgao
+    ano
+    mes
+    matricula
+    cpf
+    valor
+  }
+}
+
+{
+  recebimentoMatricula(matricula: "00256588")
+  {
+    orgao
+    ano
+    mes
+    matricula
+    cpf
+    nome
+    valor 
+  }
+}
+
+*** UPLOAD ARQUIVO ***
+
+mutation uploadFile($file: Upload!){
+ uploadFile(file: $file) {
+  filename
+  mimetype
+}
+}
+
+*** CONSULTA RECEBIMENTOS POR PERÍODO ***
+
+{
+  recebimentoPeriodo(ano: "2016", mes: "04")
+  {
+    orgao
+    ano
+    mes
+    matricula
+    cpf
+    valor
+  }
+}
+
+*** DELETE RECEBIMENTOS DO PERÍODO ***
+
+mutation {
+  deleteRecebimentos(ano: "2016", mes: "04") 
+
+}

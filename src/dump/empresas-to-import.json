@@ -1,0 +1,849 @@
+[{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d5b"
+  },
+  "idempresa": 1001,
+  "empresa": "SECRETARIA DE GOVERNO",
+  "sigla": "SEC DE GOV",
+  "idmongo": 1001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d5c"
+  },
+  "idempresa": 1002,
+  "empresa": "SECRETARIA DE ESTADO DE ADMINISTRACAO PUBLICA DO DF",
+  "sigla": "SEAPDF",
+  "idmongo": 1002
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d5d"
+  },
+  "idempresa": 1003,
+  "empresa": "SECRETARIA  DE PLANEJAMENTO",
+  "sigla": "SEPLAN",
+  "idmongo": 1003
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d5e"
+  },
+  "idempresa": 1004,
+  "empresa": "SECRETARIA GESTAO ADMINISTRATIVA APOSENTADOS",
+  "sigla": "SEPLAG-A",
+  "idmongo": 1004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d5f"
+  },
+  "idempresa": 1005,
+  "empresa": "SECRETARIA DE ESTADO DE DESENVOLVIMENTO SOCIAL APOSENTADOS",
+  "sigla": "SEDESTA",
+  "idmongo": 1030
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d60"
+  },
+  "idempresa": 1006,
+  "empresa": "SECRETARIA DE ESTADO DO MEIO AMBIENTE RECURSOS HIDRICOS",
+  "sigla": "SEMARH",
+  "idmongo": 1006
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d61"
+  },
+  "idempresa": 1007,
+  "empresa": "SEC DE ESTADO DE SAUDE",
+  "sigla": "SES",
+  "idmongo": 1007
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d62"
+  },
+  "idempresa": 1008,
+  "empresa": "SEC DE SAUDE APOSENTADOS",
+  "sigla": "SES - A",
+  "idmongo": 1007
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d63"
+  },
+  "idempresa": 1009,
+  "empresa": "SECRETARIA SEGURANCA PUBLICA APOSENTADOS",
+  "sigla": "SSP - A",
+  "idmongo": 1011
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d64"
+  },
+  "idempresa": 1010,
+  "empresa": "SECRETARIA DE ESTADO DA CRIANCA DO DISTRITO FEDERAL",
+  "sigla": "SECCRIANCA",
+  "idmongo": 1010
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d65"
+  },
+  "idempresa": 1011,
+  "empresa": "SEC DE SEGURANCA PUBLICA",
+  "sigla": "SSP",
+  "idmongo": 1011
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d66"
+  },
+  "idempresa": 1012,
+  "empresa": "SECRETARIA DE ESTADO DA ORDEM PUBLICA E SOCIAL DO DISTRITO FEDERAL",
+  "sigla": "SEOPS",
+  "idmongo": 1012
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d67"
+  },
+  "idempresa": 1013,
+  "empresa": "CASA CIVIL",
+  "sigla": "CC",
+  "idmongo": 1013
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d68"
+  },
+  "idempresa": 1014,
+  "empresa": "SEC DE ESTADO DO MEIO AMBIENTE RECURSOS HIDRICOS APOSENTADOS",
+  "sigla": "SEMARHA",
+  "idmongo": 1006
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d69"
+  },
+  "idempresa": 1015,
+  "empresa": "SEC DE ESTADO DE CULTURA",
+  "sigla": "SEC",
+  "idmongo": 1015
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6a"
+  },
+  "idempresa": 1016,
+  "empresa": "SEC DE ESTADO DE CULTURA APOSENTADOS",
+  "sigla": "SEC -  I",
+  "idmongo": 1015
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6b"
+  },
+  "idempresa": 1017,
+  "empresa": "SEC DE INFRA-ESTRUTURA E OBRAS",
+  "sigla": "SINFO",
+  "idmongo": 1017
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6c"
+  },
+  "idempresa": 1018,
+  "empresa": "SEC DE INFRA-ESTRUTURA E OBRAS APOSENTADOS",
+  "sigla": "SINFOA",
+  "idmongo": 1017
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6d"
+  },
+  "idempresa": 1019,
+  "empresa": "SECRETARIA DE ESTADO DE TURISMO",
+  "sigla": "ADETUR",
+  "idmongo": 1019
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6e"
+  },
+  "idempresa": 1020,
+  "empresa": "SECRETARIA DE ESTADO DA CRIANCA E DO ADOLESCENTE",
+  "sigla": "SECA",
+  "idmongo": 1020
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d6f"
+  },
+  "idempresa": 1021,
+  "empresa": "SECRETARIA DE ESTADO DA ORDEM PUBLICA APOSENTADOS",
+  "sigla": "SEOPSA",
+  "idmongo": 1012
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d70"
+  },
+  "idempresa": 1022,
+  "empresa": "SOCIEDADE DE TRANSPORTES COLETIVOS DE BRASILIA",
+  "sigla": "TCB",
+  "idmongo": 1022
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d71"
+  },
+  "idempresa": 1023,
+  "empresa": "SEC DE FAZENDA",
+  "sigla": "SF",
+  "idmongo": 1023
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d72"
+  },
+  "idempresa": 1024,
+  "empresa": "SEC DE FAZENDA APOSENTADOS",
+  "sigla": "SF - A",
+  "idmongo": 1023
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d73"
+  },
+  "idempresa": 1025,
+  "empresa": "SEC DE ESTADO DE GOVERNO",
+  "sigla": "SEG",
+  "idmongo": 1025
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d74"
+  },
+  "idempresa": 1026,
+  "empresa": "GABINETE DO GOVERNADOR APOSENTADOS",
+  "sigla": "GAG - A",
+  "idmongo": 9901
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d75"
+  },
+  "idempresa": 1027,
+  "empresa": "SECRETARIA DE ESTADO DE TRANSPORTES",
+  "sigla": "SET",
+  "idmongo": 1027
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d76"
+  },
+  "idempresa": 1028,
+  "empresa": "SECRETARIA DE TRANSPORTES APOSENTADOS",
+  "sigla": "ST - A",
+  "idmongo": 1027
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d77"
+  },
+  "idempresa": 1029,
+  "empresa": "SECRETARIA DE ESTADO TRABALHO DO DISTRITO FEDERAL",
+  "sigla": "SETRAB",
+  "idmongo": 1029
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d78"
+  },
+  "idempresa": 1030,
+  "empresa": "SEC DE EST DE DESENVOLVIMENTO SOCIAL",
+  "sigla": "SEDEST",
+  "idmongo": 1030
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d79"
+  },
+  "idempresa": 1031,
+  "empresa": "SEC DESENV TECNOLOGICO",
+  "sigla": "SEDEST",
+  "idmongo": 1031
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7a"
+  },
+  "idempresa": 1032,
+  "empresa": "SEC DE INDUSTRIA E COMERCIO INATIVOS",
+  "sigla": "SIC - I",
+  "idmongo": 9902
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7b"
+  },
+  "idempresa": 1033,
+  "empresa": "SEC DE EST DE  AGRIC E DESENVOLVIMENTO RURAL",
+  "sigla": "SEAGRI",
+  "idmongo": 1033
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7c"
+  },
+  "idempresa": 1034,
+  "empresa": "SEC DE EST DE AGRIC E DESENVOLVIMENTO RURAL APOSENTADOS",
+  "sigla": "SEAGRI - A",
+  "idmongo": 1033
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7d"
+  },
+  "idempresa": 1035,
+  "empresa": "AGENCIA DE FISCALIZACAO DO DISTRITO FEDERAL",
+  "sigla": "AGEFIS",
+  "idmongo": 1035
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7e"
+  },
+  "idempresa": 1036,
+  "empresa": "COMPAHIA DE DESENVOLVIMENTO HABITACIONAL DF",
+  "sigla": "CODHAB",
+  "idmongo": 1036
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d7f"
+  },
+  "idempresa": 1037,
+  "empresa": "COMPANHIA DE DESENVOLVIMENTO HABITACIONAL APOSENTADOS",
+  "sigla": "CODHAB - A",
+  "idmongo": 1036
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d80"
+  },
+  "idempresa": 1038,
+  "empresa": "SEC  DE JUSTICA DIREITOS HUMANOS E CIDADANIA",
+  "sigla": "SEJUS",
+  "idmongo": 1038
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d81"
+  },
+  "idempresa": 1040,
+  "empresa": "SEC DE ART PARA O DESENV DO ENTORNO",
+  "sigla": "SUAD",
+  "idmongo": 1040
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d82"
+  },
+  "idempresa": 1041,
+  "empresa": "SEC DE ART P/ O DESENV DO ENTORNO INATIVOS",
+  "sigla": "SUAD - I",
+  "idmongo": 1040
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d83"
+  },
+  "idempresa": 1042,
+  "empresa": "SUBSECRETARIA DE DEFESA DO CONSUMIDOR",
+  "sigla": "PROCON",
+  "idmongo": 1042
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d84"
+  },
+  "idempresa": 1043,
+  "empresa": "SUBSECRETARIA DE DEFESA DO CONSUMIDOR  (INATIVOS)",
+  "sigla": "PROCON-I",
+  "idmongo": 1042
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d85"
+  },
+  "idempresa": 1044,
+  "empresa": "SEC DE COORD DAS ADMINISTRACOES REGIONAIS",
+  "sigla": "SECAR",
+  "idmongo": 1044
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d86"
+  },
+  "idempresa": 1045,
+  "empresa": "SUBSEC DE COORD DAS ADMINISTRACOES REG(INATIVOS)",
+  "sigla": "SUCAR-I",
+  "idmongo": 1044
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d87"
+  },
+  "idempresa": 1046,
+  "empresa": "ARQUIVO PUBLICO DO DISTRITO FEDERAL",
+  "sigla": "AP",
+  "idmongo": 1046
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d88"
+  },
+  "idempresa": 1047,
+  "empresa": "DEPARTAMENTO DE TRANSITO DO DF APOSENTADOS",
+  "sigla": "DETRAN - A",
+  "idmongo": 3001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d89"
+  },
+  "idempresa": 1048,
+  "empresa": "SECRETARIA DE ESTADO TRANSPARENCIA E CONTROLE",
+  "sigla": "STC",
+  "idmongo": 1048
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8a"
+  },
+  "idempresa": 1049,
+  "empresa": "ADM REGIONAL DE AGUAS CLARAS",
+  "sigla": "RA XX",
+  "idmongo": 1049
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8b"
+  },
+  "idempresa": 1050,
+  "empresa": "ADM REGIONAL DE BRASILIA",
+  "sigla": "RA-I",
+  "idmongo": 1050
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8c"
+  },
+  "idempresa": 1051,
+  "empresa": "ADM REGIONAL DO GAMA",
+  "sigla": "RA-II",
+  "idmongo": 1051
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8d"
+  },
+  "idempresa": 1052,
+  "empresa": "ADM REGIONAL DE TAGUATINGA",
+  "sigla": "RA-III",
+  "idmongo": 1052
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8e"
+  },
+  "idempresa": 1053,
+  "empresa": "ADM REGIONAL DE BRAZLANDIA",
+  "sigla": "RA-IV",
+  "idmongo": 1053
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d8f"
+  },
+  "idempresa": 1054,
+  "empresa": "ADM REGIONAL DE SOBRADINHO",
+  "sigla": "RA-V",
+  "idmongo": 1054
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d90"
+  },
+  "idempresa": 1055,
+  "empresa": "ADM REGIONAL DE PLANALTINA",
+  "sigla": "RA-VI",
+  "idmongo": 1055
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d91"
+  },
+  "idempresa": 1056,
+  "empresa": "ADM REGIONAL DO PARANOA",
+  "sigla": "RA-VII",
+  "idmongo": 1056
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d92"
+  },
+  "idempresa": 1057,
+  "empresa": "ADM REGIONAL DO NUCLEO BANDEIRANTE",
+  "sigla": "RA-VIII",
+  "idmongo": 1057
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d93"
+  },
+  "idempresa": 1058,
+  "empresa": "ADM REGIONAL DE CEILANDIA",
+  "sigla": "RA-IX",
+  "idmongo": 1058
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d94"
+  },
+  "idempresa": 1059,
+  "empresa": "ADM REGIONAL DO GUARA",
+  "sigla": "RA-X",
+  "idmongo": 1059
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d95"
+  },
+  "idempresa": 1060,
+  "empresa": "ADM REGIONAL DO CRUZEIRO",
+  "sigla": "RA-XI",
+  "idmongo": 1060
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d96"
+  },
+  "idempresa": 1061,
+  "empresa": "ADM REGIONAL DE SAMAMBAIA",
+  "sigla": "RA-XII",
+  "idmongo": 1061
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d97"
+  },
+  "idempresa": 1062,
+  "empresa": "ADM REGIONAL DE SANTA MARIA",
+  "sigla": "RA-XIII",
+  "idmongo": 1062
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d98"
+  },
+  "idempresa": 1063,
+  "empresa": "ADM REGIONAL DO LAGO SUL",
+  "sigla": "RA-XVI",
+  "idmongo": 1063
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d99"
+  },
+  "idempresa": 1064,
+  "empresa": "ADM REGIONAL DO RECANTO DAS EMAS",
+  "sigla": "RA-XV",
+  "idmongo": 1064
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9a"
+  },
+  "idempresa": 1065,
+  "empresa": "ADM REGIONAL DO LAGO NORTE",
+  "sigla": "RA-XVIII",
+  "idmongo": 1065
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9b"
+  },
+  "idempresa": 1066,
+  "empresa": "ADM REGIONAL DE SAO SEBASTIAO",
+  "sigla": "RA-XIV",
+  "idmongo": 1066
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9c"
+  },
+  "idempresa": 1067,
+  "empresa": "ADM REGIONAL DO RIACHO FUNDO",
+  "sigla": "RA-XVII",
+  "idmongo": 1067
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9d"
+  },
+  "idempresa": 1068,
+  "empresa": "ADM REGIONAL DA CANDANGOLANDIA",
+  "sigla": "RA - XIX",
+  "idmongo": 1068
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9e"
+  },
+  "idempresa": 1069,
+  "empresa": "LABORATORIO CENTRAL DE BRASILIA",
+  "sigla": "LACEN",
+  "idmongo": 1069
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91d9f"
+  },
+  "idempresa": 1070,
+  "empresa": "INSTITUTO DE SAUDE  (INATIVOS)",
+  "sigla": "ISDF-I",
+  "idmongo": 1070
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da0"
+  },
+  "idempresa": 1071,
+  "empresa": "SECRETARIA DE JUSTICA E DIREITOS HUMANOS APOSENTADOS",
+  "sigla": "SJCDHA",
+  "idmongo": 9902
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da1"
+  },
+  "idempresa": 1072,
+  "empresa": "INSTITUTO DE DESENV DE RECURSOS HUMANOS(INATIVOS)",
+  "sigla": "IDR-I",
+  "idmongo": 9902
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da2"
+  },
+  "idempresa": 1073,
+  "empresa": "SEC DE ESPORTES E LAZER",
+  "sigla": "SEL",
+  "idmongo": 1073
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da3"
+  },
+  "idempresa": 1074,
+  "empresa": "SEC DE ESPORTES E LAZER APOSENTADOS",
+  "sigla": "SEEL - A",
+  "idmongo": 1073
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da4"
+  },
+  "idempresa": 1075,
+  "empresa": "JARDIM ZOOLOGICO DE BRASILIA",
+  "sigla": "JZOO",
+  "idmongo": 1075
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da5"
+  },
+  "idempresa": 1076,
+  "empresa": "POLICIA MILITAR DO DISTRITO FEDERAL APOSENTADOS",
+  "sigla": "PMA",
+  "idmongo": 1077
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da6"
+  },
+  "idempresa": 1077,
+  "empresa": "POLICIA MILITAR DO DISTRITO FEDERAL",
+  "sigla": "PMDF",
+  "idmongo": 1077
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da7"
+  },
+  "idempresa": 1079,
+  "empresa": "POLICIA CIVIL DO DISTRITO FEDERAL",
+  "sigla": "PCDF",
+  "idmongo": 1079
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da8"
+  },
+  "idempresa": 1081,
+  "empresa": "JARDIM BOTANICO DE BRASILIA",
+  "sigla": "JBB",
+  "idmongo": 1081
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91da9"
+  },
+  "idempresa": 1083,
+  "empresa": "DEPARTAMENTO DE EMPREGO",
+  "sigla": "DEPEN",
+  "idmongo": 1083
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91daa"
+  },
+  "idempresa": 1085,
+  "empresa": "PROCURADORIA GERAL",
+  "sigla": "PRG",
+  "idmongo": 1085
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dab"
+  },
+  "idempresa": 1086,
+  "empresa": "PROCURADORIA GERAL - APOSENTADOS",
+  "sigla": "PRG-A",
+  "idmongo": 1085
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dac"
+  },
+  "idempresa": 1087,
+  "empresa": "CORPO DE BOMBEIRO DO DISTRITO FEDERAL",
+  "sigla": "CBDF",
+  "idmongo": 1087
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dad"
+  },
+  "idempresa": 2000,
+  "empresa": "PLANO DE DESLIGAMENTO VOLUNTARIO NOVACAP - PDV-NOVACAP",
+  "sigla": "PDV - NOVACAP",
+  "idmongo": 2000
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dae"
+  },
+  "idempresa": 2001,
+  "empresa": "CIA URBANIZADORA DA NOVA CAPITAL DO BRASIL",
+  "sigla": "NOVACAP",
+  "idmongo": 2001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91daf"
+  },
+  "idempresa": 2002,
+  "empresa": "COMPANHIA IMOBILIARIA DE BRASILIA",
+  "sigla": "TERRACAP",
+  "idmongo": 2002
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db0"
+  },
+  "idempresa": 2003,
+  "empresa": "EMP DE ASSIST TEC E EXTENSAO RURAL DO DF",
+  "sigla": "EMATER",
+  "idmongo": 2003
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db1"
+  },
+  "idempresa": 2004,
+  "empresa": "SOCIEDADE DE ABASTECIMENTO DE BRASILIA",
+  "sigla": "SAB",
+  "idmongo": 2004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db2"
+  },
+  "idempresa": 2005,
+  "empresa": "CIA DO DESENVOLVIMENTO DO PLANALTO CENTRAL",
+  "sigla": "CODEPLAN",
+  "idmongo": 2005
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db3"
+  },
+  "idempresa": 3001,
+  "empresa": "DEPARTAMENTO DE TRANSITO DO DISTRITO FEDERAL",
+  "sigla": "DETRAN",
+  "idmongo": 3001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db4"
+  },
+  "idempresa": 3002,
+  "empresa": "DEPARTAMENTO DE ESTRADAS DE RODAGEM",
+  "sigla": "DER",
+  "idmongo": 3002
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db5"
+  },
+  "idempresa": 3003,
+  "empresa": "SERVICO DE AJARDINAMENTO E LIMPEZA URBANA ATIVOS",
+  "sigla": "SALUB - A",
+  "idmongo": 3004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db6"
+  },
+  "idempresa": 3004,
+  "empresa": "SERVICO DE LIMPEZA URBANA - ATIVOS",
+  "sigla": "SLU",
+  "idmongo": 3004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db7"
+  },
+  "idempresa": 4001,
+  "empresa": "CENTRAIS DE ABASTECIMENTO DE BRASILIA",
+  "sigla": "CEASA",
+  "idmongo": 4001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db8"
+  },
+  "idempresa": 5001,
+  "empresa": "TRANSPORTE URBANO  APOSENTADOS",
+  "sigla": "DFTRANS",
+  "idmongo": 5001
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91db9"
+  },
+  "idempresa": 5002,
+  "empresa": "FUNDACAO HEMOCENTRO DE BRASILIA",
+  "sigla": "FHDF",
+  "idmongo": 5002
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dba"
+  },
+  "idempresa": 5003,
+  "empresa": "FUNDACAO JARDIM ZOOLOGICO DE BRASILIA",
+  "sigla": "ZOO/DF",
+  "idmongo": 5003
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dbb"
+  },
+  "idempresa": 5004,
+  "empresa": "TRANSPORTE URBANO DO DISTRITO FEDERAL",
+  "sigla": "DFTRANS",
+  "idmongo": 5004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dbc"
+  },
+  "idempresa": 5005,
+  "empresa": "SERVICO DE LIMPEZA URBANA-APOSENTADOS",
+  "sigla": "SLU/A",
+  "idmongo": 3004
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dbd"
+  },
+  "idempresa": 5006,
+  "empresa": "DEPARTAMENTO DE ESTRADAS DE RODAGEM - APOSENTADOS",
+  "sigla": "DER/A",
+  "idmongo": 3002
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dbe"
+  },
+  "idempresa": 5007,
+  "empresa": "FUNDACAO JARDIM ZOOLOGICO DE BRASILIA - APOSENTADOS",
+  "sigla": "ZOODF - A",
+  "idmongo": 5003
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dbf"
+  },
+  "idempresa": 5008,
+  "empresa": "SEC COORD ADMINIST REGIONAIS",
+  "sigla": "SECAR",
+  "idmongo": 5008
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dc0"
+  },
+  "idempresa": 5009,
+  "empresa": "AGENCIA REGULADORA DE AGUAS, ENERGIA E SANEAMENTO BASICO DO DISTRITO FEDERAL",
+  "sigla": "ADASA",
+  "idmongo": 5009
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dc1"
+  },
+  "idempresa": 5075,
+  "empresa": "ADMINISTRACAO DO RIACHO FUNDO II",
+  "sigla": "RAXXI",
+  "idmongo": 5075
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dc2"
+  },
+  "idempresa": 5077,
+  "empresa": "ADM REGIONAL DE ITAPOA",
+  "sigla": "RA-XXVIII",
+  "idmongo": 5077
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dc3"
+  },
+  "idempresa": 9901,
+  "empresa": "GOVERNO DO DISTRITO FEDERAL",
+  "sigla": "GDF",
+  "idmongo": 9901
+},{
+  "_id": {
+    "$oid": "6042a7c1f1fa031520f91dc4"
+  },
+  "idempresa": 9902,
+  "empresa": "OUTROS",
+  "sigla": "OUTROS",
+  "idmongo": 9902
+}]

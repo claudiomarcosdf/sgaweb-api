@@ -1,0 +1,46 @@
+{
+	"prefixo": "553942",
+	"placa": "JJJ0099",
+	"marca": "TOYOTA",
+	"modelo": "COROLLA XEI 2.0",
+	"status": "ATIVO",
+	"dados_gerais": {
+	   "fabricacao": "2019/2020",
+	   "combustivel": "FLEX",
+	   "chassi": "",
+	   "tombamento": "",
+	   "renavam": "",
+	},
+	"ordens_servico": [
+	  {
+	    "numero": 0,
+	    "ano": 0,
+	    "data_inicio": "",
+	    "situacao": "ABERTA",	
+	    "descricao": "",
+	    "unidade": "",
+	    "odometro_inicial": "",
+	    "tipo_servico": "PREVENTIVO",
+	    "empresa": "",
+	    "fechamento": {
+	       "data_fim": "",
+	       "odometro_final": "",
+	       "responsavel": ""
+	    },
+	    "notas_fiscais": [
+	    	{
+	    	    "numero": "",
+	    		"data": "",
+	    		"valor": 0,
+	    		"avatar_url": ""
+	    	},
+	    	{
+	    	    "numero": "",
+	    		"data": "",
+	    		"valor": 0,
+	    		"avatar_url": ""
+	    	}	    	
+	    ]
+	  }
+	]
+}

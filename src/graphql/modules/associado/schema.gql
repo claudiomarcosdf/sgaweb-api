@@ -1,0 +1,130 @@
+enum Status {
+  ATIVO
+  INATIVO
+}
+
+type Contatos {
+  celular1: String
+  celular2: String
+  telefoneresidencia: String
+  telefonetrabalho: String
+  email: String
+}
+
+type Endereco {
+  cep: String
+  logradouro: String
+  cidade: String
+  bairro: String
+  estado: String
+  contatos: Contatos
+}
+
+type DadosPessoais {
+  dtnascimento: Date
+  cpf: String
+  rg: String
+  sexo: String
+  estadocivil: String
+}
+
+type Empresa {
+  sigla: String
+  nome_empresa: String
+  orgao: String
+  funcao: String
+  dtadmissao: Date
+  dtfiliacao: Date
+  aposentado: Boolean
+}
+
+type Associado {
+  id: ID!
+  matricula: String
+  matsindicato: String
+  nome: String
+  dtfiliacao: Date
+  dados_pessoais: DadosPessoais
+  endereco: Endereco
+  status: Status
+  empresa: Empresa
+}
+# *** I N P U T S ***
+
+input ContatosInput {
+  celular1: String
+  celular2: String
+  telefoneresidencia: String
+  telefonetrabalho: String
+  email: String
+}
+
+input EnderecoInput {
+  cep: String
+  logradouro: String
+  cidade: String
+  bairro: String
+  estado: String
+  contatos: ContatosInput
+}
+
+input DadosPessoaisInput {
+  dtnascimento: Date
+  cpf: String
+  rg: String
+  sexo: String
+  estadocivil: String
+}
+
+input EmpresaInput {
+  sigla: String
+  nome_empresa: String
+  orgao: String
+  funcao: String
+  dtadmissao: Date
+  aposentado: Boolean
+}
+
+input AssociadoInput {
+  matricula: String
+  nome: String
+  dados_pessoais: DadosPessoaisInput
+  endereco: EnderecoInput
+  empresa: EmpresaInput
+  status: Status
+}
+
+input AssociadoInputUpdate {
+  nome: String
+  matricula: String
+  dados_pessoais: DadosPessoaisInput
+  endereco: EnderecoInput
+  empresa: EmpresaInput
+  status: Status
+}
+
+input AssociadoFiltroInput {
+  # Status pode vir vazio
+  status: String
+  empresa_sigla: String
+  aposentado: Boolean
+}
+
+# *** TYPES QUERY AND MUTATION ***
+
+type Query {
+  # Finds Basics
+  associados: [Associado]
+  getAssociadoId(id: String): Associado
+  getAssociado(matricula: String, nome: String): Associado
+
+  #Finds Custom
+  activeAssociados(status: Status): [Associado]
+  associadosFiltro(filtro: AssociadoFiltroInput): [Associado]
+}
+
+type Mutation {
+  createAssociado(data: AssociadoInput): Associado
+  updateAssociado(id: String, data: AssociadoInputUpdate): Associado
+  deleteAssociado(id: String): Boolean
+}

@@ -1,0 +1,29 @@
+enum Perfil {
+  SUPER
+  ADMIN
+  COMUM
+}
+
+type Usuario {
+  id: ID!
+  nome: String!
+  email: String!
+  token: String!
+  createdAt: String!
+  perfis: [Perfil]
+}
+
+input UsuarioRegisterInput {
+  nome: String!
+  email: String!
+  senha: String!
+  confirmaSenha: String!
+  perfis: [Perfil]
+}
+
+# *** TYPES QUERY AND MUTATION ***
+
+type Mutation {
+  login(email: String!, senha: String!): Usuario!
+  register(dados: UsuarioRegisterInput!): Usuario!
+}

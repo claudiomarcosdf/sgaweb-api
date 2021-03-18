@@ -1,0 +1,540 @@
+[{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409950"
+  },
+  "codigo": 1001,
+  "sigla": "SEC DE GOV",
+  "nome": "Secretaria De Governo"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409951"
+  },
+  "codigo": 1002,
+  "sigla": "SEAPDF",
+  "nome": "Secretaria De Estado De Administracao Publica Do Df"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409952"
+  },
+  "codigo": 1003,
+  "sigla": "SEPLAN",
+  "nome": "Secretaria  De Planejamento"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409953"
+  },
+  "codigo": 1006,
+  "sigla": "SEMARH",
+  "nome": "Secretaria De Estado Do Meio Ambiente Recursos Hidricos"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409954"
+  },
+  "codigo": 1007,
+  "sigla": "SES",
+  "nome": "Sec De Estado De Saude"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409955"
+  },
+  "codigo": 1010,
+  "sigla": "SECCRIANCA",
+  "nome": "Secretaria De Estado Da Crianca Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409956"
+  },
+  "codigo": 1011,
+  "sigla": "SSP",
+  "nome": "Sec De Seguranca Publica"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409957"
+  },
+  "codigo": 1012,
+  "sigla": "SEOPS",
+  "nome": "Secretaria De Estado Da Ordem Publica E Social Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409958"
+  },
+  "codigo": 1013,
+  "sigla": "CC",
+  "nome": "Casa Civil"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409959"
+  },
+  "codigo": 1015,
+  "sigla": "SEC",
+  "nome": "Sec De Estado De Cultura"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995a"
+  },
+  "codigo": 1017,
+  "sigla": "SINFO",
+  "nome": "Sec De Infra-Estrutura E Obras"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995b"
+  },
+  "codigo": 1019,
+  "sigla": "ADETUR",
+  "nome": "Secretaria De Estado De Turismo"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995c"
+  },
+  "codigo": 1020,
+  "sigla": "SECA",
+  "nome": "Secretaria De Estado Da Crianca E Do Adolescente"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995d"
+  },
+  "codigo": 1022,
+  "sigla": "TCB",
+  "nome": "Sociedade De Transportes Coletivos De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995e"
+  },
+  "codigo": 1023,
+  "sigla": "SF",
+  "nome": "Sec De Fazenda"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840995f"
+  },
+  "codigo": 1025,
+  "sigla": "SEG",
+  "nome": "Sec De Estado De Governo"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409960"
+  },
+  "codigo": 1027,
+  "sigla": "SET",
+  "nome": "Secretaria De Estado De Transportes"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409961"
+  },
+  "codigo": 1029,
+  "sigla": "SETRAB",
+  "nome": "Secretaria De Estado Trabalho Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409962"
+  },
+  "codigo": 1030,
+  "sigla": "SEDEST",
+  "nome": "Sec De Est De Desenvolvimento Social"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409963"
+  },
+  "codigo": 1033,
+  "sigla": "SEAGRI",
+  "nome": "Sec De Est De  Agric E Desenvolvimento Rural"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409964"
+  },
+  "codigo": 1035,
+  "sigla": "AGEFIS",
+  "nome": "Agencia De Fiscalizacao Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409965"
+  },
+  "codigo": 1036,
+  "sigla": "CODHAB",
+  "nome": "Compahia De Desenvolvimento Habitacional Df"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409966"
+  },
+  "codigo": 1038,
+  "sigla": "SEJUS",
+  "nome": "Sec  De Justica Direitos Humanos E Cidadania"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409967"
+  },
+  "codigo": 1040,
+  "sigla": "SUAD",
+  "nome": "Sec De Art Para O Desenv Do Entorno"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409968"
+  },
+  "codigo": 1042,
+  "sigla": "PROCON",
+  "nome": "Subsecretaria De Defesa Do Consumidor"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409969"
+  },
+  "codigo": 1044,
+  "sigla": "SECAR",
+  "nome": "Sec De Coord Das Administracoes Regionais"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996a"
+  },
+  "codigo": 1046,
+  "sigla": "AP",
+  "nome": "Arquivo Publico Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996b"
+  },
+  "codigo": 1048,
+  "sigla": "STC",
+  "nome": "Secretaria De Estado Transparencia E Controle"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996c"
+  },
+  "codigo": 1049,
+  "sigla": "RA-XX",
+  "nome": "Adm Regional De Aguas Claras"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996d"
+  },
+  "codigo": 1050,
+  "sigla": "RA-I",
+  "nome": "Adm Regional De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996e"
+  },
+  "codigo": 1051,
+  "sigla": "RA-II",
+  "nome": "Adm Regional Do Gama"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840996f"
+  },
+  "codigo": 1052,
+  "sigla": "RA-III",
+  "nome": "Adm Regional De Taguatinga"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409970"
+  },
+  "codigo": 1053,
+  "sigla": "RA-IV",
+  "nome": "Adm Regional De Brazlandia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409971"
+  },
+  "codigo": 1054,
+  "sigla": "RA-V",
+  "nome": "Adm Regional De Sobradinho"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409972"
+  },
+  "codigo": 1055,
+  "sigla": "RA-VI",
+  "nome": "Adm Regional De Planaltina"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409973"
+  },
+  "codigo": 1056,
+  "sigla": "RA-VII",
+  "nome": "Adm Regional Do Paranoa"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409974"
+  },
+  "codigo": 1057,
+  "sigla": "RA-VIII",
+  "nome": "Adm Regional Do Nucleo Bandeirante"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409975"
+  },
+  "codigo": 1058,
+  "sigla": "RA-IX",
+  "nome": "Adm Regional De Ceilandia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409976"
+  },
+  "codigo": 1059,
+  "sigla": "RA-X",
+  "nome": "Adm Regional Do Guara"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409977"
+  },
+  "codigo": 1060,
+  "sigla": "RA-XI",
+  "nome": "Adm Regional Do Cruzeiro"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409978"
+  },
+  "codigo": 1061,
+  "sigla": "RA-XII",
+  "nome": "Adm Regional De Samambaia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409979"
+  },
+  "codigo": 1062,
+  "sigla": "RA-XIII",
+  "nome": "Adm Regional De Santa Maria"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997a"
+  },
+  "codigo": 1063,
+  "sigla": "RA-XVI",
+  "nome": "Adm Regional Do Lago Sul"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997b"
+  },
+  "codigo": 1064,
+  "sigla": "RA-XV",
+  "nome": "Adm Regional Do Recanto Das Emas"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997c"
+  },
+  "codigo": 1065,
+  "sigla": "RA-XVIII",
+  "nome": "Adm Regional Do Lago Norte"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997d"
+  },
+  "codigo": 1066,
+  "sigla": "RA-XIV",
+  "nome": "Adm Regional De Sao Sebastiao"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997e"
+  },
+  "codigo": 1067,
+  "sigla": "RA-XVII",
+  "nome": "Adm Regional Do Riacho Fundo"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840997f"
+  },
+  "codigo": 1068,
+  "sigla": "RA-XIX",
+  "nome": "Adm Regional Da Candangolandia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409980"
+  },
+  "codigo": 1069,
+  "sigla": "LACEN",
+  "nome": "Laboratorio Central De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409981"
+  },
+  "codigo": 1070,
+  "sigla": "ISDF-I",
+  "nome": "Instituto De Saude  (Inativos)"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409982"
+  },
+  "codigo": 1073,
+  "sigla": "SEL",
+  "nome": "Sec De Esportes E Lazer"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409983"
+  },
+  "codigo": 1075,
+  "sigla": "ZOODF",
+  "nome": "Jardim Zoologico De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409984"
+  },
+  "codigo": 1077,
+  "sigla": "PMDF",
+  "nome": "Policia Militar Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409985"
+  },
+  "codigo": 1079,
+  "sigla": "PCDF",
+  "nome": "Policia Civil Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409986"
+  },
+  "codigo": 1081,
+  "sigla": "JBB",
+  "nome": "Jardim Botanico De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409987"
+  },
+  "codigo": 1083,
+  "sigla": "DEPEN",
+  "nome": "Departamento De Emprego"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409988"
+  },
+  "codigo": 1085,
+  "sigla": "PRG",
+  "nome": "Procuradoria Geral"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409989"
+  },
+  "codigo": 1087,
+  "sigla": "CBMDF",
+  "nome": "Corpo De Bombeiro Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998a"
+  },
+  "codigo": 2000,
+  "sigla": "PDV - NOVACAP",
+  "nome": "Plano De Desligamento Voluntario Novacap - Pdv-Novacap"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998b"
+  },
+  "codigo": 2001,
+  "sigla": "NOVACAP",
+  "nome": "Cia Urbanizadora Da Nova Capital Do Brasil"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998c"
+  },
+  "codigo": 2002,
+  "sigla": "TERRACAP",
+  "nome": "Companhia Imobiliaria De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998d"
+  },
+  "codigo": 2003,
+  "sigla": "EMATER",
+  "nome": "Emp De Assist Tec E Extensao Rural Do Df"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998e"
+  },
+  "codigo": 2004,
+  "sigla": "SAB",
+  "nome": "Sociedade De Abastecimento De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840998f"
+  },
+  "codigo": 2005,
+  "sigla": "CODEPLAN",
+  "nome": "Cia Do Desenvolvimento Do Planalto Central"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409990"
+  },
+  "codigo": 3001,
+  "sigla": "DETRAN",
+  "nome": "Departamento De Transito Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409991"
+  },
+  "codigo": 3002,
+  "sigla": "DER",
+  "nome": "Departamento De Estradas De Rodagem"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409992"
+  },
+  "codigo": 3004,
+  "sigla": "SLU",
+  "nome": "Servico De Limpeza Urbana"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409993"
+  },
+  "codigo": 4001,
+  "sigla": "CEASA",
+  "nome": "Centrais De Abastecimento De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409994"
+  },
+  "codigo": 5002,
+  "sigla": "FHDF",
+  "nome": "Fundacao Hemocentro De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409995"
+  },
+  "codigo": 5003,
+  "sigla": "ZOO/DF",
+  "nome": "Fundacao Jardim Zoologico De Brasilia"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409996"
+  },
+  "codigo": 5004,
+  "sigla": "DFTRANS",
+  "nome": "Transporte Urbano Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409997"
+  },
+  "codigo": 5009,
+  "sigla": "ADASA",
+  "nome": "Agencia Reguladora De Aguas, Energia E Saneamento Basico Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409998"
+  },
+  "codigo": 5075,
+  "sigla": "RA-XXI",
+  "nome": "Adm Regional Do Riacho Fundo Ii"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b8409999"
+  },
+  "codigo": 5077,
+  "sigla": "RA-XXVIII",
+  "nome": "Adm Regional De Itapoa"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840999a"
+  },
+  "codigo": 9901,
+  "sigla": "GDF",
+  "nome": "Governo Do Distrito Federal"
+},{
+  "_id": {
+    "$oid": "5ff10aedc3ba0609b840999b"
+  },
+  "codigo": 9902,
+  "sigla": "OUTROS",
+  "nome": "Outros"
+},{
+  "_id": {
+    "$oid": "60429c14f1fa031520f91c85"
+  },
+  "codigo": 1004,
+  "sigla": "SEPLAG",
+  "nome": "Secretaria De Gestão Administrativa"
+}]

@@ -1,0 +1,67 @@
+type File {
+  filename: String!
+  mimetype: String!
+}
+
+type Recebimento {
+  orgao: String
+  ano: String
+  mes: String
+  matricula: String
+  cpf: String
+  nome: String
+  controle: String
+  lotacao: String
+  rubrica: String
+  parcela: String
+  valor: Float
+}
+
+input RecebimentoInput {
+  orgao: String
+  ano: String
+  mes: String
+  matricula: String
+  cpf: String
+  nome: String
+  controle: String
+  lotacao: String
+  rubrica: String
+  parcela: String
+  valor: Float
+}
+
+input FiltroInput {
+  ano: String
+  mes: String
+  orgao: String
+  rubrica: String
+  matricula: String
+}
+
+type Query {
+  recebimentos: [Recebimento]
+  recebimento(id: String): Recebimento
+  recebimentoPeriodo(ano: String, mes: String): [Recebimento]
+  recebimentoFiltro(filtro: FiltroInput): [Recebimento]
+  recebidos(ano: String, mes: String, rubrica: String): Boolean
+  recebimentoOrgao(orgao: String): [Recebimento]
+  recebimentoMatricula(matricula: String): [Recebimento]
+
+  # Para gráfico
+  totaisMensais(ano: String): [Float]
+}
+
+type Query {
+  file: File
+}
+
+type Mutation {
+  uploadFile(file: Upload!): File
+}
+
+type Mutation {
+  insertRecebimento(data: RecebimentoInput): Boolean
+  deleteRecebimento(id: String): Boolean
+  deleteRecebimentos(ano: String, mes: String): Boolean
+}
