@@ -26,4 +26,6 @@ input UsuarioRegisterInput {
 type Mutation {
   login(email: String!, senha: String!): Usuario!
   register(dados: UsuarioRegisterInput!): Usuario!
+  forgotPassword(email: String!): Boolean
+  resetPassword(codeToken: String!, newPassword: String!): Boolean
 }

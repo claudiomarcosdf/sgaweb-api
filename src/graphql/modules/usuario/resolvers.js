@@ -3,9 +3,11 @@ const { UserInputError } = require('apollo-server');
 const {
   validateRegisterInput,
   validateLoginInput,
+  validateForgotEmail
 } = require('../../../common/validators');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jwt-simple');
+const nodemailer = require('nodemailer');
 
 function generateToken(usuario) {
   const now = Math.floor(Date.now() / 1000);
@@ -16,13 +18,39 @@ function generateToken(usuario) {
     createdAt: usuario.createdAt,
     perfis: usuario.perfis,
     iat: now,
-    exp: now + 1 * 24 * 60 * 60, //token válido por um dia
+    exp: now + 1 * 24 * 60 * 60 //token válido por um dia
   };
 
   return {
     ...usuarioInfo,
-    token: jwt.encode(usuarioInfo, process.env.AUTH_SECRET),
+    token: jwt.encode(usuarioInfo, process.env.AUTH_SECRET)
   };
+}
+
+function generateCodeToken(id) {
+  const now = Math.floor(Date.now() / 1000);
+  const obj = {
+    _id: id,
+    iat: now,
+    exp: now + 1 * 1 * 60 * 60 //token válido por uma hora
+  };
+
+  return jwt.encode(obj, process.env.KEY_RESET_PASSWORD);
+}
+
+function verifyCodeToken(codeToken) {
+  try {
+    const contentToken = jwt.decode(codeToken, process.env.KEY_RESET_PASSWORD);
+
+    if (new Date(contentToken.exp * 1000) > new Date()) {
+      usuario = contentToken;
+      return true;
+    } else {
+      return false;
+    }
+  } catch (error) {
+    throw new Error('Token inválido ou expirado.');
+  }
 }
 
 module.exports = {
@@ -71,15 +99,84 @@ module.exports = {
         context && context.validateMasters(); //verifica se é adm ou super
       }
 
-      const senhaCrypt = await bcryptjs.hash(senha, 12);
+      const senhaCrypted = await bcryptjs.hash(senha, 12);
 
       const novoUsuario = await UsuarioService.register(
         nome,
         email,
-        senhaCrypt,
+        senhaCrypted,
         dados.perfis
       );
       return generateToken(novoUsuario);
     },
-  },
+    forgotPassword: async (_, { email }) => {
+      const usuario = await UsuarioService.getUsuario(email);
+      const { errors, valid } = validateForgotEmail(email);
+
+      if (!valid) {
+        throw new UserInputError('Errors', { errors });
+      }
+
+      if (!usuario) {
+        errors.general = 'Usuário não encontrado.';
+        throw new UserInputError('Usuário não encontrado', { errors });
+      }
+
+      const codeToken = generateCodeToken(usuario.id);
+
+      const transporter = nodemailer.createTransport({
+        host: process.env.SMTP_HOST,
+        port: 587,
+        secure: false,
+        auth: {
+          user: process.env.SMTP_USER,
+          pass: process.env.SMTP_PW
+        }
+      });
+
+      const mailOptions = {
+        from: process.env.SMTP_USER,
+        to: email,
+        subject: 'Link de recuperação de senha',
+        html: `
+          <h2>Por favor click sobre o link para recuperar sua senha no sistema SGAWEB</h2>
+          <p><a href="${process.env.CLIENT_URL}/reset-password?code=${codeToken}">${process.env.CLIENT_URL}/reset-password?code=${codeToken}</p>
+        `
+      };
+
+      transporter.sendMail(mailOptions, (err, data) => {
+        if (err) {
+          errors.general = `Erro no envio do email. [${err}]`;
+          throw new UserInputError('Erro no envio do email.', { errors });
+        }
+
+        if (data) {
+          console.log('Código de recuperação de senha enviado com sucesso!');
+        }
+      });
+
+      //update user.resetLink
+      const success = UsuarioService.resetLink(usuario.id, codeToken);
+
+      return success;
+    },
+    resetPassword: async (_, { codeToken, newPassword }) => {
+      const errors = {};
+      if (!codeToken) {
+        errors.general = 'Código do token inválido!';
+        throw new UserInputError('Código do token inválido!', { errors });
+      } else {
+        if (verifyCodeToken(codeToken)) {
+          //
+          const senhaCrypted = await bcryptjs.hash(newPassword, 12);
+
+          const success = UsuarioService.saveNewPassword(
+            codeToken,
+            senhaCrypted
+          );
+          return success;
+        }
+      }
+    }
+  }
 };

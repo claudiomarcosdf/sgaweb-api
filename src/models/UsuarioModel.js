@@ -6,6 +6,7 @@ const usuarioSchema = Schema({
   senha: String,
   createdAt: String,
   perfis: [],
+  resetLink: { data: String, default: '' }
 });
 
 module.exports = model('Usuario', usuarioSchema);

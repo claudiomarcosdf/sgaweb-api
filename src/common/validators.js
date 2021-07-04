@@ -19,7 +19,7 @@ module.exports.validateRegisterInput = (nome, email, senha, confirmaSenha) => {
 
   return {
     errors,
-    valid: Object.keys(errors).length < 1,
+    valid: Object.keys(errors).length < 1
   };
 };
 
@@ -39,6 +39,23 @@ module.exports.validateLoginInput = (email, senha) => {
 
   return {
     errors,
-    valid: Object.keys(errors).length < 1,
+    valid: Object.keys(errors).length < 1
+  };
+};
+
+module.exports.validateForgotEmail = (email) => {
+  const errors = {};
+  if (email.trim() === '') {
+    errors.email = 'O email é obrigatório';
+  } else {
+    const regEx = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (!email.match(regEx)) {
+      errors.email = 'Email inválido.';
+    }
+  }
+
+  return {
+    errors,
+    valid: Object.keys(errors).length < 1
   };
 };
