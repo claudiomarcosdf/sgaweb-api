@@ -1,0 +1,24 @@
+type Orgao {
+  codigo: String
+  sigla: String
+  nome: String
+}
+
+input OrgaoInput {
+  codigo: String
+  sigla: String
+  nome: String
+}
+
+# *** TYPES QUERY AND MUTATION ***
+
+type Query {
+  orgaos: [Orgao]
+  getOrgaoId(codigo: String): Orgao
+}
+
+type Mutation {
+  createOrgao(codigo: String, sigla: String, nome: String): Orgao
+  updateOrgao(id: String, data: OrgaoInput): Orgao
+  deleteOrgao(id: String): Boolean
+}

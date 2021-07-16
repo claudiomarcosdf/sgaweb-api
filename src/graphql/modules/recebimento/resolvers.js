@@ -1,9 +1,21 @@
 const RecebimentoService = require('../../../services/RecebimentoService');
+const OrgaoService = require('../../../services/OrgaoService');
 const { formatToFloat, customCpf } = require('../../../common/helpers');
 
+let orgaosList = [];
+
 async function insertRegister(line) {
+  const tresPrimeirosCaracteres = line.substr(0, 3);
+  let codigoDoOrgao = tresPrimeirosCaracteres;
+
+  if (tresPrimeirosCaracteres === '990') {
+    codigoDoOrgao = line.substr(62, 3);
+  }
+
+  const orgaoObj = orgaosList.find((orgao) => orgao.codigo === codigoDoOrgao);
+
   const recebimento = {
-    orgao: line.substr(0, 3),
+    orgao: orgaoObj ? orgaoObj.sigla : 'GDF',
     ano: line.substr(3, 4),
     mes: line.substr(7, 2),
     matricula: line.substr(9, 8),
@@ -83,6 +95,8 @@ module.exports = {
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
+      orgaosList = await OrgaoService.getAll();
+
       const upload = await processFile(file);
       return upload;
     },
