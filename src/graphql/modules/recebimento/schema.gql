@@ -3,6 +3,11 @@ type File {
   mimetype: String!
 }
 
+type RecebimentoPorOrgao {
+  orgao: String
+  total: Float
+}
+
 type Recebimento {
   orgao: String
   ano: String
@@ -50,6 +55,7 @@ type Query {
 
   # Para gráfico
   totaisMensais(ano: String): [Float]
+  totalMensalPorEmpresa(ano: String, mes: String): [RecebimentoPorOrgao]
 }
 
 type Query {

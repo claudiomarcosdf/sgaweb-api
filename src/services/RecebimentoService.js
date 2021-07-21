@@ -109,6 +109,43 @@ class RecebimentoService {
       throw new Error('Erro buscar recebimentos.' + error);
     }
   };
+
+  getTotaisPorEmpresa = async (ano, mes) => {
+    try {
+      const response = await Recebimento.aggregate([
+        {
+          $match: { ano: ano, mes: mes },
+        },
+        {
+          $group: {
+            _id: '$orgao',
+            total: { $sum: '$valor' },
+          },
+        },
+        {
+          $project: { _id: 1, total: 1 },
+        },
+      ]);
+
+      let totais = [];
+      // _id é o órgão, total é a soma do valor por empresa
+      if (!response) {
+        return totais;
+      } else {
+        totais = response.map(obj => {
+          return {
+            orgao: obj._id,
+            total: obj.total
+          }
+        })
+
+        return totais;
+      }      
+    } catch (error) {
+      throw new Error('Erro buscar totais por empresa.' + error);
+    }
+  };
 }
+
 
 module.exports = new RecebimentoService();

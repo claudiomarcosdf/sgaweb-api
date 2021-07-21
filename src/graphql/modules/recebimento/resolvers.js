@@ -71,6 +71,7 @@ module.exports = {
       await RecebimentoService.getByPeriodFull(ano, mes),
     recebimentoFiltro: async (_, { filtro }) => {
       const { mes, ano, orgao, rubrica, matricula } = filtro;
+
       let newFilter = { mes, ano };
       if (orgao) {
         newFilter = { ...newFilter, orgao };
@@ -91,7 +92,8 @@ module.exports = {
     recebimentoMatricula: async (_, { matricula }) =>
       await RecebimentoService.getByMatricula(matricula),
 
-    totaisMensais: async (_, { ano }) => await RecebimentoService.getTotais(ano)
+    totaisMensais: async (_, { ano }) => await RecebimentoService.getTotais(ano),
+    totalMensalPorEmpresa: async (_, { ano, mes }) => await RecebimentoService.getTotaisPorEmpresa(ano, mes),
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
