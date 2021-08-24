@@ -66,5 +66,14 @@ associadoSchema.pre('save', function () {
   if (!this.matsindicato) this.matsindicato = generateMatricula(13);
 });
 
+associadoSchema.pre(['updateOne', 'findOneAndUpdate'], async function () {
+  // console.log(this._update.status);
+  if (this._update.status == 'INATIVO') {
+    this._update.inativoAt = Date.now();
+  } else {
+    this._update.inativoAt = '';
+  }
+})
+
 associadoSchema.plugin(beautifyUnique);
 module.exports = mongoose.model('associado', associadoSchema);

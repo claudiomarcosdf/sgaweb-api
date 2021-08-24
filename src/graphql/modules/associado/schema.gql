@@ -48,6 +48,7 @@ type Associado {
   endereco: Endereco
   status: Status
   empresa: Empresa
+  inativoAt: Date
 }
 # *** I N P U T S ***
 
