@@ -53,6 +53,58 @@ function verifyCodeToken(codeToken) {
   }
 }
 
+async function sendEmail(usuario, errors) {
+  const codeToken = generateCodeToken(usuario.id);
+  
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST,
+    port: 587,
+    secure: false,
+    auth: {
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PW
+    }
+  });
+  
+  const mailOptions = {
+    from: process.env.SMTP_USER,
+    to: usuario.email,
+    subject: 'Link de recuperação de senha',
+    html: `
+    <h2>Por favor click sobre o link para recuperar sua senha no sistema SGAWEB</h2>
+    <p><a href="${process.env.CLIENT_URL}/reset-password?code=${codeToken}">${process.env.CLIENT_URL}/reset-password?code=${codeToken}</p>
+    `
+  };
+
+  await transporter.sendMail(mailOptions)
+  .then((res) => { 
+     console.log('Mail sended.')
+  }
+  )
+  .catch((err) => {
+    errors.general = `Erro no envio do email. 
+                      Mensagem original: [${err}]`;
+    throw new UserInputError('Erro no envio do email.', { errors });
+  });
+
+  return await UsuarioService.resetLink(usuario.id, codeToken);
+
+  // transporter.sendMail(mailOptions, async (err, data) => {
+  //   if (err) {
+  //     errors.general = `Erro no envio do email. [${err}]`;
+  //     throw new UserInputError('Erro no envio do email.', { errors });
+  //   }
+     
+  //   if (data) {
+  //     //update user.resetLink
+  //     return await UsuarioService.resetLink(usuario.id, codeToken);
+      
+  //     console.log('Código de recuperação de senha enviado com sucesso!');
+  //   }
+  // }); 
+
+}
+
 module.exports = {
   Mutation: {
     login: async (_, { email, senha }) => {
@@ -122,43 +174,8 @@ module.exports = {
         throw new UserInputError('Usuário não encontrado', { errors });
       }
 
-      const codeToken = generateCodeToken(usuario.id);
-
-      const transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
-        port: 587,
-        secure: false,
-        auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PW
-        }
-      });
-
-      const mailOptions = {
-        from: process.env.SMTP_USER,
-        to: email,
-        subject: 'Link de recuperação de senha',
-        html: `
-          <h2>Por favor click sobre o link para recuperar sua senha no sistema SGAWEB</h2>
-          <p><a href="${process.env.CLIENT_URL}/reset-password?code=${codeToken}">${process.env.CLIENT_URL}/reset-password?code=${codeToken}</p>
-        `
-      };
-
-      transporter.sendMail(mailOptions, (err, data) => {
-        if (err) {
-          errors.general = `Erro no envio do email. [${err}]`;
-          throw new UserInputError('Erro no envio do email.', { errors });
-        }
-
-        if (data) {
-          console.log('Código de recuperação de senha enviado com sucesso!');
-        }
-      });
-
-      //update user.resetLink
-      const success = UsuarioService.resetLink(usuario.id, codeToken);
-
-      return success;
+      //Enviar email de recuperação
+      return await sendEmail(usuario, errors);
     },
     resetPassword: async (_, { codeToken, newPassword }) => {
       const errors = {};
@@ -170,7 +187,7 @@ module.exports = {
           //
           const senhaCrypted = await bcryptjs.hash(newPassword, 12);
 
-          const success = UsuarioService.saveNewPassword(
+          const success = await UsuarioService.saveNewPassword(
             codeToken,
             senhaCrypted
           );
