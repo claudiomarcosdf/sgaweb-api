@@ -4,7 +4,7 @@ mongoose.Error = require('../errors/MongooseError');
 
 const DB_CONNECTION = process.env.MONGODB_CONNECTION;
 
-const db = (async () => {
+const connectWithRetry = async () => {
   try {
     await mongoose.connect(DB_CONNECTION, {
       useNewUrlParser: true,
@@ -14,9 +14,14 @@ const db = (async () => {
     });
     console.log('MongoDB connected');
   } catch (error) {
-    console.log(error.message);
-    process.exit(1);
-  }
+    console.log(error.message, 'Reconecting in 10 sec');
+    setTimeout(connectWithRetry, 10000);
+    // process.exit(1);
+  }  
+}
+
+const db = (async () => {
+  await connectWithRetry();
 })();
 
 module.exports = db;
