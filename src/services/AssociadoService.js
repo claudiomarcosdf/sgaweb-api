@@ -70,6 +70,7 @@ class AssociadoService {
   createAssociado = async (data) => {
     const associado = new Associado({
       ...data,
+      matricula: data.matricula.padStart(8, 0)
     });
     try {
       return await associado.save(data);
