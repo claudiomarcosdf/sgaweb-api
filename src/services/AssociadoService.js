@@ -5,6 +5,8 @@ const CreateAssociadoError = require('../errors/CreateAssociadoError');
 const UpdateAssociadoError = require('../errors/UpdateAssociadoError');
 const DeleteAssociadoError = require('../errors/DeleteAssociadoError');
 
+const { numberOnly } = require('../common/helpers');
+
 class AssociadoService {
   associados = async () => {
     return await Associado.find();
@@ -70,7 +72,7 @@ class AssociadoService {
   createAssociado = async (data) => {
     const associado = new Associado({
       ...data,
-      matricula: data.matricula.padStart(8, 0)
+      matricula: numberOnly(data.matricula).padStart(8, 0)
     });
     try {
       return await associado.save(data);

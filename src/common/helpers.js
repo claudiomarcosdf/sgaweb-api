@@ -29,6 +29,10 @@ exports.formatToFloat = function (valueString) {
   return finalValue;
 };
 
+exports.numberOnly = function (valueString) {
+  return valueString.replace(/[^0-9]/g, '');
+}
+
 exports.customCpf = function (valueString) {
   const value = valueString.substr(1, valueString.length);
   return value;
