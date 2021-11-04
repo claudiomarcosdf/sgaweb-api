@@ -6,14 +6,12 @@ exports.generateMatricula = function (key) {
     number = number * key;
   }
 
-  const threeParts1 = Math.round(Math.random() * number)
-    .toString()
-    .substr(0, 2);
-  const threeParts2 = Math.round(Math.random() * (number - key) * 88)
-    .toString()
-    .substr(2, 2);
+  const twoParts = Math.round(Math.random() * number)
+    .toString().slice(0, 2);
+  const threeParts = Math.round(Math.random() * (number - key) * 88)
+    .toString().slice(0, 3);
 
-  return `${threeParts1}${threeParts2}`;
+  return `${twoParts}${threeParts}`;
 };
 
 exports.formatToFloat = function (valueString) {
