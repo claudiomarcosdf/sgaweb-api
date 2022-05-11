@@ -71,6 +71,18 @@ class AssociadoService {
       throw new NotFoundError('Erro ao realizar consulta.');
     }
   };
+  findByPesquisa = async (nome, status) => {
+    const nomeRegex = {
+      $regex: new RegExp('^' + nome.toLowerCase(), 'i'),
+    };  
+    
+    try {
+      return await Associado.find({nome: nomeRegex, status: status});
+    } catch (error) {
+      throw new NotFoundError('Erro ao realizar pesquisa.');
+    }    
+
+  };
 
   createAssociado = async (data) => {
     const associado = new Associado({

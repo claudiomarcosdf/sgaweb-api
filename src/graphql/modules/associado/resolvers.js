@@ -27,6 +27,13 @@ module.exports = {
     associadosFiltro: async (_, { filtro }) => {
       return await AssociadoService.findByFiltro(filtro);
     },
+    associadosPesquisa: async (_, { nome, status }) => {
+      if (nome) {
+
+        return await AssociadoService.findByPesquisa(nome, status);
+      }
+    }
+
   },
 
   Mutation: {

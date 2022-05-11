@@ -122,6 +122,7 @@ type Query {
   #Finds Custom
   activeAssociados(status: Status): [Associado]
   associadosFiltro(filtro: AssociadoFiltroInput): [Associado]
+  associadosPesquisa(nome: String, status: String): [Associado]
 }
 
 type Mutation {
