@@ -31,15 +31,18 @@ class AssociadoService {
       throw new Error('Erro ao buscar associados.');
     }
   };
-  findByMatriculaOrNome = async (field, value) => {
+  findByMatriculaOrNome = async (field, value, status) => {
     const valueRegex = {
       $regex: new RegExp('^' + value.toLowerCase() + '$', 'i'),
     };
 
     try {
-      return await Associado.findOne({
+      const result = await Associado.findOne({
         [field]: valueRegex,
+        status: status,
       });
+
+      return result;
     } catch (error) {
       throw new NotFoundError('Erro ao buscar associado.');
     }

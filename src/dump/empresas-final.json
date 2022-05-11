@@ -1,0 +1,435 @@
+[{
+  "_id": {
+    "$oid": "6279830a2142d118d418efc6"
+  },
+  "codigo": 1002,
+  "sigla": "SEAPDF",
+  "nome": "SECRETARIA DE ESTADO DE ADMINISTRACAO PUBLICA DO DF"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efc7"
+  },
+  "codigo": 1003,
+  "sigla": "SEATCB",
+  "nome": "SECRETARIA DE PLANEJAMENTO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efc8"
+  },
+  "codigo": 1006,
+  "sigla": "SEMA",
+  "nome": "SECRETARIA DE ESTADO DO MEIO AMBIENTE RECURSOS HIDRICOS"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efc9"
+  },
+  "codigo": 1007,
+  "sigla": "SES",
+  "nome": "SECRETARIA DE ESTADO DE SAUDE"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efca"
+  },
+  "codigo": 1010,
+  "sigla": "SECCRIANCA",
+  "nome": "SECRETARIA DE ESTADO DA CRIANCA DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efcb"
+  },
+  "codigo": 1011,
+  "sigla": "SSP-DF",
+  "nome": "SECRETARIA DE SEGURANCA PUBLICA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efcc"
+  },
+  "codigo": 1012,
+  "sigla": "SEOPS",
+  "nome": "SECRETARIA DE ESTADO DA ORDEM PUBLICA E SOCIAL DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efcd"
+  },
+  "codigo": 1013,
+  "sigla": "CCIVIL",
+  "nome": "CASA CIVIL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efce"
+  },
+  "codigo": 1014,
+  "sigla": "IBRAM",
+  "nome": "SECRETARIA DE ESTADO DO MEIO AMBIENTE RECURSOS HIDRICOS APOSENTADOS"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efcf"
+  },
+  "codigo": 1015,
+  "sigla": "SEC",
+  "nome": "SECRETARIA DE ESTADO DE CULTURA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd0"
+  },
+  "codigo": 1017,
+  "sigla": "SEOINF",
+  "nome": "SECRETARIA DE INFRA-ESTRUTURA E OBRAS"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd1"
+  },
+  "codigo": 1019,
+  "sigla": "SETUR",
+  "nome": "SECRETARIA DE ESTADO DE TURISMO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd2"
+  },
+  "codigo": 1022,
+  "sigla": "TCB",
+  "nome": "SOCIEDADE DE TRANSPORTES COLETIVOS DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd3"
+  },
+  "codigo": 1025,
+  "sigla": "SEGOV",
+  "nome": "SECRETARIA DE ESTADO DE GOVERNO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd4"
+  },
+  "codigo": 1026,
+  "sigla": "GVG",
+  "nome": "GABINETE DO VICE GOVERNADOR"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd5"
+  },
+  "codigo": 1027,
+  "sigla": "SETRAM",
+  "nome": "SECRETARIA DE ESTADO DE TRANSPORTES"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd6"
+  },
+  "codigo": 1029,
+  "sigla": "SETRAB",
+  "nome": "SECRETARIA DE ESTADO TRABALHO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd7"
+  },
+  "codigo": 1030,
+  "sigla": "SEDEST",
+  "nome": "SECRETARIA DESENVOLVIMENTO TECNOLOGICO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd8"
+  },
+  "codigo": 1033,
+  "sigla": "SEAGRI",
+  "nome": "SECRETARIA DE EST DE  AGRIC E DESENVOLVIMENTO RURAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efd9"
+  },
+  "codigo": 1035,
+  "sigla": "DF LEGAL",
+  "nome": "AGENCIA DE FISCALIZACAO DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efda"
+  },
+  "codigo": 1036,
+  "sigla": "CODHAB",
+  "nome": "COMPAHIA DE DESENVOLVIMENTO HABITACIONAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efdb"
+  },
+  "codigo": 1038,
+  "sigla": "SEJUS",
+  "nome": "SECRETARIA DE JUSTICA DIREITOS HUMANOS E CIDADANIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efdc"
+  },
+  "codigo": 1044,
+  "sigla": "SECAR",
+  "nome": "SECRETARIA DE COORD DAS ADMINISTRACOES REGIONAIS"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efdd"
+  },
+  "codigo": 1046,
+  "sigla": "ARPDF",
+  "nome": "ARQUIVO PUBLICO DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efde"
+  },
+  "codigo": 1048,
+  "sigla": "STC",
+  "nome": "SECRETARIA DE ESTADO TRANSPARENCIA E CONTROLE"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efdf"
+  },
+  "codigo": 1049,
+  "sigla": "RA-XX",
+  "nome": "ADM REGIONAL DE AGUAS CLARAS"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe0"
+  },
+  "codigo": 1050,
+  "sigla": "RA-I",
+  "nome": "ADM REGIONAL DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe1"
+  },
+  "codigo": 1051,
+  "sigla": "RA-II",
+  "nome": "ADM REGIONAL DO GAMA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe2"
+  },
+  "codigo": 1052,
+  "sigla": "RA-III",
+  "nome": "ADM REGIONAL DE TAGUATINGA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe3"
+  },
+  "codigo": 1053,
+  "sigla": "RA-IV",
+  "nome": "ADM REGIONAL DE BRAZLANDIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe4"
+  },
+  "codigo": 1054,
+  "sigla": "RA-V",
+  "nome": "ADM REGIONAL DE SOBRADINHO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe5"
+  },
+  "codigo": 1055,
+  "sigla": "RA-VI",
+  "nome": "ADM REGIONAL DE PLANALTINA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe6"
+  },
+  "codigo": 1056,
+  "sigla": "RA-VII",
+  "nome": "ADM REGIONAL DO PARANOA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe7"
+  },
+  "codigo": 1057,
+  "sigla": "RA-VIII",
+  "nome": "ADM REGIONAL DO NUCLEO BANDEIRANTE"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe8"
+  },
+  "codigo": 1058,
+  "sigla": "RA-IX",
+  "nome": "ADM REGIONAL DE CEILANDIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efe9"
+  },
+  "codigo": 1059,
+  "sigla": "RA-X",
+  "nome": "ADM REGIONAL DO GUARA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efea"
+  },
+  "codigo": 1060,
+  "sigla": "RA-XI",
+  "nome": "ADM REGIONAL DO CRUZEIRO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efeb"
+  },
+  "codigo": 1061,
+  "sigla": "RA-XII",
+  "nome": "ADM REGIONAL DE SAMAMBAIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efec"
+  },
+  "codigo": 1062,
+  "sigla": "RA-XIII",
+  "nome": "ADM REGIONAL DE SANTA MARIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efed"
+  },
+  "codigo": 1067,
+  "sigla": "RA-XVII",
+  "nome": "ADM REGIONAL DO RIACHO FUNDO"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efee"
+  },
+  "codigo": 1069,
+  "sigla": "LACEN",
+  "nome": "LABORATORIO CENTRAL DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efef"
+  },
+  "codigo": 1073,
+  "sigla": "SEL DF",
+  "nome": "SEC DE ESPORTES E LAZER"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff0"
+  },
+  "codigo": 1077,
+  "sigla": "PMDF",
+  "nome": "POLICIA MILITAR DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff1"
+  },
+  "codigo": 1079,
+  "sigla": "PCDF",
+  "nome": "POLICIA CIVIL DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff2"
+  },
+  "codigo": 1081,
+  "sigla": "JBB",
+  "nome": "JARDIM BOTANICO DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff3"
+  },
+  "codigo": 1085,
+  "sigla": "PGDF",
+  "nome": "PROCURADORIA GERAL DO DF"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff4"
+  },
+  "codigo": 2001,
+  "sigla": "NOVACAP",
+  "nome": "CIA URBANIZADORA DA NOVA CAPITAL DO BRASIL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff5"
+  },
+  "codigo": 2002,
+  "sigla": "TERRACAP",
+  "nome": "COMPANHIA IMOBILIARIA DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff6"
+  },
+  "codigo": 2003,
+  "sigla": "EMATER",
+  "nome": "EMP DE ASSIST TEC E EXTENSAO RURAL DO DF"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff7"
+  },
+  "codigo": 2004,
+  "sigla": "SAB",
+  "nome": "SOCIEDADE DE ABASTECIMENTO DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff8"
+  },
+  "codigo": 2005,
+  "sigla": "CODEPLAN",
+  "nome": "CIA DO DESENVOLVIMENTO DO PLANALTO CENTRAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418eff9"
+  },
+  "codigo": 3001,
+  "sigla": "DETRAN",
+  "nome": "DEPARTAMENTO DE TRANSITO DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418effa"
+  },
+  "codigo": 3002,
+  "sigla": "DER",
+  "nome": "DEPARTAMENTO DE ESTRADAS DE RODAGEM"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418effb"
+  },
+  "codigo": 3004,
+  "sigla": "SLU",
+  "nome": "SERVICO DE LIMPEZA URBANA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418effc"
+  },
+  "codigo": 4001,
+  "sigla": "CEASA",
+  "nome": "CENTRAIS DE ABASTECIMENTO DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418effd"
+  },
+  "codigo": 5002,
+  "sigla": "FHB",
+  "nome": "FUNDACAO HEMOCENTRO DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418effe"
+  },
+  "codigo": 5003,
+  "sigla": "FJZB",
+  "nome": "FUNDACAO JARDIM ZOOLOGICO DE BRASILIA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418efff"
+  },
+  "codigo": 5009,
+  "sigla": "ADASA",
+  "nome": "AGENCIA REGULADORA DE AGUAS, ENERGIA E SANEAMENTO BASICO DO DF"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418f000"
+  },
+  "codigo": 5075,
+  "sigla": "RA-XXI",
+  "nome": "ADMINISTRACAO DO RIACHO FUNDO II"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418f001"
+  },
+  "codigo": 5077,
+  "sigla": "RA-XXVIII",
+  "nome": "ADM REGIONAL DE ITAPOA"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418f002"
+  },
+  "codigo": 9901,
+  "sigla": "GDF",
+  "nome": "GOVERNO DO DISTRITO FEDERAL"
+},{
+  "_id": {
+    "$oid": "6279830a2142d118d418f003"
+  },
+  "codigo": 9902,
+  "sigla": "OUTROS",
+  "nome": "OUTROS"
+}]

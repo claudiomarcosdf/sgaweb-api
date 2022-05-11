@@ -13,14 +13,15 @@ module.exports = {
     activeAssociados: async (_, { status }) => {
       return await AssociadoService.findByStatus(status);
     },
-    getAssociado: async (_, { matricula, nome }) => {
+    getAssociado: async (_, { matricula, nome, status }) => {
       if (matricula) {
         return await AssociadoService.findByMatriculaOrNome(
           'matricula',
-          matricula
+          matricula,
+          status
         );
       } else {
-        return await AssociadoService.findByMatriculaOrNome('nome', nome);
+        return await AssociadoService.findByMatriculaOrNome('nome', nome, status);
       }
     },
     associadosFiltro: async (_, { filtro }) => {

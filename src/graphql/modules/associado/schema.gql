@@ -117,7 +117,7 @@ type Query {
   # Finds Basics
   associados: [Associado]
   getAssociadoId(id: String): Associado
-  getAssociado(matricula: String, nome: String): Associado
+  getAssociado(matricula: String, nome: String, status: String): Associado
 
   #Finds Custom
   activeAssociados(status: Status): [Associado]

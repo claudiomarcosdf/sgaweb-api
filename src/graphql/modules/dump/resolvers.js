@@ -90,10 +90,7 @@ function getEstadoCivil(ec) {
 function getAposentado(associado) {
   let isAposentado = false;
 
-  if (associado.funcao.toLowerCase() === /aposentado/i) isAposentado = true;
-  if (associado.lotacao.toLowerCase() === /aposentado/i) isAposentado = true;
-  if (associado.motivodemissao.toLowerCase() === /aposentado/i)
-    isAposentado = true;
+  if (associado.APOSENTADO == 'S') isAposentado = true;
 
   return isAposentado;
 }
@@ -109,22 +106,36 @@ function getDataNascimento(data) {
 }
 
 const getEmpresa = async (associado) => {
-  const codigoToFindMongo = await originalEmpresas.find(
-    (obj) => obj.idempresa === associado.empresa
+  const empresaMongo = await originalEmpresas.find(
+    (obj) => obj.codigo === associado.empresa
   );
 
-  const empresaMongo = await empresasFromMongo.find(
-    (obj) => obj.codigo === codigoToFindMongo.idmongo
-  );
+  let objEmpresa = {};
+  let aposentado = getAposentado(associado);
 
-  return {
-    codigo: empresaMongo?.codigo || 9902,
-    nome_empresa: empresaMongo?.nome || 'Outros',
-    sigla: empresaMongo?.sigla || 'OUTROS',
-    orgao: '',
-    dtadmissao: new Date(associado.dtadmissao.$date),
-    aposentado: getAposentado(associado)
-  };
+  objEmpresa.codigo = empresaMongo?.codigo || 9902;
+  objEmpresa.nome_empresa = empresaMongo?.nome || 'Outros';
+  objEmpresa.sigla = empresaMongo?.sigla || 'OUTROS';
+  objEmpresa.orgao = '';
+  objEmpresa.lotacao = associado?.lotacao || '';
+  objEmpresa.funcao = associado?.funcao || '';
+  objEmpresa.aposentado = aposentado;
+
+  if (aposentado) {
+    if (associado.dtaposentadoria.$date != '1970-01-01T00:00:00Z') {
+      objEmpresa.dtaposentadoria = new Date(associado.dtaposentadoria.$date);
+    }
+  } 
+
+  if (associado.dtadmissao.$date != '1970-01-01T00:00:00Z') {
+    objEmpresa.dtadmissao = new Date(associado.dtadmissao.$date);
+  }
+
+  if (associado.dtdemissao.$date != '1970-01-01T00:00:00Z') {
+    objEmpresa.dtadmissao = new Date(associado.dtdemissao.$date);
+  }  
+
+  return objEmpresa;
 };
 
 const getAssociadoRecebimentos = async (cpf, matrSindicato) => {
@@ -173,9 +184,23 @@ const geraMatricula = () => {
   return generateMatricula(new Date().getSeconds() + 255);
 };
 
+const getMatriculaSindicato = (listAssociados) => {
+  const matSindicato = geraMatricula();
+
+  const associadoJaCadastrado = listAssociados.find(
+    (obj) => obj.matsindicato == matSindicato
+  );
+
+  if (associadoJaCadastrado) {
+    getMatriculaSindicato(listAssociados);
+  }
+
+  return matSindicato;
+}
+
 const gerarAssociadosJSON = async (obj) => {
   try {
-    await writeFile('associados.json', JSON.stringify(obj));
+    await writeFile('associados2.json', JSON.stringify(obj));
   } catch (err) {
     console.log(err);
   }
@@ -188,11 +213,11 @@ const Dumpservice = async () => {
     );
 
     const associados = JSON.parse(
-      await readFile('src/dump/associados-full.json')
+      await readFile('src/dump/associados-full-final.json')
     );
 
     originalEmpresas = JSON.parse(
-      await readFile('src/dump/empresas-to-import.json')
+      await readFile('src/dump/empresas-final.json')
     );
 
     empresasFromMongo = JSON.parse(
@@ -210,102 +235,46 @@ const Dumpservice = async () => {
     let cpfsNaoCadastrado = [];
 
     (async () => {
-      for (let i = 0; i < cpfs.length; i++) {
-        const associado = await associados.find(
-          (associado) => associado.cpf === cpfs[i].cpf
-        );
+      for (const associado of associados ) {
+        if (associado.matempresa != undefined) {
 
-        if (associado) {
-          if (associado.ativo === 'S') {
-            ativosArray.push({
-              matricula: associado.matempresa.padStart(8, '0'),
-              nome: associado.nome,
-              status: associado.ativo === 'S' ? 'ATIVO' : 'INATIVO',
-              dtfiliacao: new Date(associado.dtfiliacao.$date),
-              matsindicato: new String(associado.matsindicato).padStart(4, '0'),
-              dados_pessoais: {
-                dtnascimento: new Date(
-                  getDataNascimento(associado.dtnascimento)
-                ),
-                cpf: associado.cpf,
-                rg: associado.rg,
-                sexo: associado.sexo === 'M' ? 'Masculino' : 'Feminino',
-                estadocivil: getEstadoCivil(associado.estadocivil)
-              },
-              endereco: {
-                cep: associado.cep,
-                logradouro: associado.endereco,
-                cidade: associado.cidade,
-                bairro: associado.bairro,
-                estado: associado.estado,
-                contatos: {
-                  celular1: formatMovel(associado.celular),
-                  celular2: formatMovel(associado.telefone01),
-                  telefoneresidencia: formatFixo(associado.telefoneresidencia),
-                  telefonetrabalho: formatFixo(associado.telefonetrabalho),
-                  email: associado.email
-                }
-              },
-              empresa: await getEmpresa(associado),
-              inativoAt: ''
-            });
-          }
-        } else {
-          //Nome, matricula e CPF vindos de 'recebimentos'
-          cpfsNaoCadastrado.push(cpfs[i].cpf);
-          // let newAssociado;
-          // let newMatSindicato;
-          // let verdade = true;
+          const matSindicato = getMatriculaSindicato(ativosArray);
 
-          // while (verdade) {
-          //   newMatSindicato = geraMatricula();
-
-          //   const exist = ativosArray.find(
-          //     (obj) => obj.matsindicato === newMatSindicato
-          //   );
-
-          //   if (exist) {
-          //     console.log('exist');
-          //     verdade = true;
-          //   } else {
-          //     newAssociado = await getAssociadoRecebimentos(
-          //       cpfs[i].cpf,
-          //       newMatSindicato
-          //     );
-          //     verdade = false;
-          //   }
-          // }
-
-          // ativosArray.push(newAssociado);
-        }
-      }
-
-      for (let x = 0; x < cpfsNaoCadastrado.length; x++) {
-        let newAssociado;
-        let newMatSindicato;
-        let verdade = true;
-
-        while (verdade) {
-          newMatSindicato = geraMatricula();
-
-          const exist = ativosArray.find(
-            (obj) => obj.matsindicato === newMatSindicato
-          );
-
-          if (exist) {
-            console.log('exist');
-            verdade = true;
-          } else {
-            newAssociado = await getAssociadoRecebimentos(
-              cpfsNaoCadastrado[x],
-              newMatSindicato
-            );
-            verdade = false;
-          }
-        }
-
-        ativosArray.push(newAssociado);
-      }
+          ativosArray.push({
+            matsindicato: matSindicato,
+            matricula: associado?.matempresa.padStart(8, '0') || '',
+            nome: associado.nome,
+            status: associado.ativo === 'S' ? 'ATIVO' : 'INATIVO',
+            dtfiliacao: new Date(associado.dtfiliacao.$date),
+            dados_pessoais: {
+              dtnascimento: new Date(
+                getDataNascimento(associado.dtnascimento)
+              ),
+              cpf: associado.cpf,
+              rg: associado.rg,
+              sexo: associado.sexo === 'M' ? 'Masculino' : 'Feminino',
+              estadocivil: getEstadoCivil(associado.estadocivil),
+              filiacao: associado.filiacao
+            },
+            endereco: {
+              cep: associado.cep,
+              logradouro: associado.endereco,
+              cidade: associado.cidade,
+              bairro: associado.bairro,
+              estado: associado.estado,
+              contatos: {
+                celular1: formatMovel(associado.celular),
+                celular2: formatMovel(associado.telefone01),
+                telefoneresidencia: formatFixo(associado.telefoneresidencia),
+                telefonetrabalho: formatFixo(associado.telefonetrabalho),
+                email: associado.email
+              }
+            },
+            empresa: await getEmpresa(associado),
+            inativoAt: ''
+          });
+        } 
+      };
 
       const final = await ativosArray.filter(
         (obj) => Object.keys(obj).length !== 0
@@ -314,56 +283,9 @@ const Dumpservice = async () => {
       gerarAssociadosJSON(final);
 
       console.log('New Associados: ', final.length);
-      console.log('Não cadastrados:', cpfsNaoCadastrado);
+      //console.log('Não cadastrados:', cpfsNaoCadastrado);
     })();
 
-    // ativosArray = associados.map(async (associado) => {
-    //   const exist = cpfs.find((obj) => obj.cpf === associado.cpf);
-
-    //   if (exist) {
-    //     return {
-    //       matricula: associado.matempresa.padStart(8, '0'),
-    //       nome: associado.nome,
-    //       status: associado.ativo === 'S' ? 'ATIVO' : 'INATIVO',
-    //       dtfiliacao: new Date(associado.dtfiliacao.$date),
-    //       matsindicato: new String(associado.matsindicato).padStart(4, '0'),
-    //       dados_pessoais: {
-    //         dtnascimento: new Date(getDataNascimento(associado.dtnascimento)),
-    //         cpf: associado.cpf,
-    //         rg: associado.rg,
-    //         sexo: associado.sexo === 'M' ? 'Masculino' : 'Feminino',
-    //         estadocivil: getEstadoCivil(associado.estadocivil)
-    //       },
-    //       endereco: {
-    //         cep: associado.cep,
-    //         logradouro: associado.endereco,
-    //         cidade: associado.cidade,
-    //         bairro: associado.bairro,
-    //         estado: associado.estado,
-    //         contatos: {
-    //           celular1: formatMovel(associado.celular),
-    //           celular2: formatMovel(associado.telefone01),
-    //           telefoneresidencia: formatFixo(associado.telefoneresidencia),
-    //           telefonetrabalho: formatFixo(associado.telefonetrabalho),
-    //           email: associado.email
-    //         }
-    //       },
-    //       empresa: await getEmpresa(associado),
-    //       inativoAt: ''
-    //     };
-    //   } else {
-    //     return {};
-    //   }
-    // });
-
-    // (async () => {
-    //   const result = await Promise.all(ativosArray);
-
-    //   const final = await result.filter((obj) => Object.keys(obj).length !== 0);
-
-    //   gerarAssociadosJSON(final);
-    //   console.log('New Associados: ', final.length);
-    // })();
 
     return true;
   } catch (error) {
