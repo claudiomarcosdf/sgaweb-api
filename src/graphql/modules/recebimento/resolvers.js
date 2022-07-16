@@ -49,6 +49,8 @@ async function processFile(file) {
   const { createReadStream } = await file;
   const stream = await createReadStream(file.filename, 'utf8');
   let data = '';
+  
+
 
   stream
     .on('data', (chunk) => (data += chunk))
@@ -97,6 +99,7 @@ module.exports = {
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
+      //const { filename, createReadStream } = await file;
       orgaosList = await OrgaoService.getAll();
 
       const upload = await processFile(file);
