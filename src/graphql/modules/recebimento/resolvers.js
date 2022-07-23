@@ -94,6 +94,8 @@ module.exports = {
     recebimentoMatricula: async (_, { matricula }) =>
       await RecebimentoService.getByMatricula(matricula),
 
+    inadimplentes: async (_, { ano, mes }) => await RecebimentoService.getInadimplentes(ano, mes),
+
     totaisMensais: async (_, { ano }) => await RecebimentoService.getTotais(ano),
     totalMensalPorEmpresa: async (_, { ano, mes }) => await RecebimentoService.getTotaisPorEmpresa(ano, mes),
   },

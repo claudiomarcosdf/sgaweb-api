@@ -1,5 +1,6 @@
 const _ = require('lodash');
 const Recebimento = require('../models/recebimentoModel');
+const Associado = require('../models/AssociadoModel');
 
 const getByFilter = async (filter) => {
   try {
@@ -145,6 +146,92 @@ class RecebimentoService {
       throw new Error('Erro buscar totais por empresa.' + error);
     }
   };
+
+  //Busca inadimplentes por período informado
+  //Consulta com tempo resposta de 1:25s (mm:ss) <RESOLVIDO!>
+  //SOLUÇÃO: Basta criar um índice no foreignField da tabela de recebimentos,
+  //no caso, o field CPF
+  getInadimplentes = async (ano, mes) => {
+    const mesFormatado = ('00' + mes).slice(-2);
+
+    console.time("duracao");
+
+    const result = await getByFilter({ ano, mes: mesFormatado });
+    const naoExisteRecebimentoPeriodo = _.isEmpty(result);   
+    if (naoExisteRecebimentoPeriodo) {
+      return []
+    }
+
+    try {
+      const response = await Associado.aggregate([
+        {
+          $match: { status: "ATIVO" },
+        },
+        {
+          $lookup: {
+            from: 'recebimentos',
+            localField: 'dados_pessoais.cpf',
+            foreignField: 'cpf',
+            as: 'recebidos'
+          },        
+        },
+        {
+          $project: {
+            recebidos : { $filter : 
+            {input : '$recebidos'  , as : 'rec', 
+              cond : { $and: [
+                { $eq : ['$$rec.ano' , ano] } ,
+                { $eq : ['$$rec.mes' , mesFormatado] }
+                ]  
+              }
+            } 
+              
+            },
+            nome: 1,
+            matricula: 1,
+            'dados_pessoais.cpf': 1,
+            endereco: 1,
+            'empresa.sigla': 1
+          }          
+        },
+        {
+          $sort: {
+            'empresa.sigla': 1,
+            nome: 1
+          }
+        }
+      ]);
+
+      let result = [];
+
+      if (!response) {
+        return result;
+      } else {
+        result = response.map(obj => {
+            return {
+              id: obj._id,
+              matricula: obj.matricula,
+              nome: obj.nome,
+              cpf: obj.dados_pessoais.cpf,
+              celular1: obj.endereco.contatos.celular1,
+              celular2: obj.endereco.contatos.celular2,
+              fone1: obj.endereco.contatos.telefoneresidencia,
+              empresa: obj.empresa.sigla,
+              recebidos: obj.recebidos
+            }
+        }).filter(associado => associado.recebidos.length == 0)
+      }
+ 
+      console.log(result.length);
+      console.timeEnd("duracao")
+      return result;
+
+    } catch (error) {
+      throw new Error('Erro buscar inadimplentes por mes/ano.' + error);
+    }
+
+  };
+
 }
 
 

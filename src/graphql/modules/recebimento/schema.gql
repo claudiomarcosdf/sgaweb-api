@@ -22,6 +22,17 @@ type Recebimento {
   valor: Float
 }
 
+type Inadimplentes {
+  id: String
+  matricula: String
+  nome: String
+  cpf: String
+  celular1: String
+  celular2: String
+  fone1: String
+  empresa: String
+}
+
 input RecebimentoInput {
   orgao: String
   ano: String
@@ -52,6 +63,9 @@ type Query {
   recebidos(ano: String, mes: String, rubrica: String): Boolean
   recebimentoOrgao(orgao: String): [Recebimento]
   recebimentoMatricula(matricula: String): [Recebimento]
+
+  # Para Relatório inadimplentes
+  inadimplentes(ano: String, mes: String): [Inadimplentes]
 
   # Para gráfico
   totaisMensais(ano: String): [Float]
