@@ -50,6 +50,15 @@ type Associado {
   empresa: Empresa
   inativoAt: Date
 }
+
+type NaoCadastrado {
+  matricula: String
+  orgao: String
+  lotacao: String
+  nome: String
+  cpf: String
+}
+
 # *** I N P U T S ***
 
 input ContatosInput {
@@ -123,10 +132,16 @@ type Query {
   activeAssociados(status: Status): [Associado]
   associadosFiltro(filtro: AssociadoFiltroInput): [Associado]
   associadosPesquisa(nome: String, status: String): [Associado]
+  associadosACadastrar(ano: String, mes: String): [NaoCadastrado]
 }
 
 type Mutation {
   createAssociado(data: AssociadoInput): Associado
   updateAssociado(id: String, data: AssociadoInputUpdate): Associado
   deleteAssociado(id: String): Boolean
+  removeCpfDuplicado: Boolean
+  inativarAssociados(ano: String, mes: String): Boolean
+  ativarAssociados(ano: String, mes: String): Boolean
+  atualizarCpfs: Boolean
+  atualizarCpfIncorreto(ano: String, mes: String): Boolean
 }

@@ -1,5 +1,6 @@
 const UsuarioService = require('../../../services/UsuarioService');
-const { UserInputError } = require('apollo-server');
+//const { UserInputError } = require('@apollo/server');
+const { GraphQLError } = require('graphql');
 const {
   validateRegisterInput,
   validateLoginInput,
@@ -84,7 +85,13 @@ async function sendEmail(usuario, errors) {
   .catch((err) => {
     errors.general = `Erro no envio do email. 
                       Mensagem original: [${err}]`;
-    throw new UserInputError('Erro no envio do email.', { errors });
+	throw new GraphQLError('Erro no envio do email.', {
+	  extensions: {
+		code: 'BAD_USER_INPUT',
+		myExtension: { errors },
+	  },
+	});					  
+    //throw new UserInputError('Erro no envio do email.', { errors });
   });
 
   return await UsuarioService.resetLink(usuario.id, codeToken);
