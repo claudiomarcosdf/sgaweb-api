@@ -1,8 +1,12 @@
 type Orgao {
+  codigo: String
+  sigla: String
   nome: String
 }
 
 input OrgaoInput {
+  codigo: String
+  sigla: String
   nome: String
 }
 
@@ -14,7 +18,7 @@ type Query {
 }
 
 type Mutation {
-  createOrgao(nome: String): Orgao
+  createOrgao(codigo: String, sigla: String, nome: String): Orgao
   updateOrgao(id: String, data: OrgaoInput): Orgao
   deleteOrgao(id: String): Boolean
 }

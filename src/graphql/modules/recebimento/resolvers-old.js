@@ -1,52 +1,46 @@
 const RecebimentoService = require('../../../services/RecebimentoService');
 const OrgaoService = require('../../../services/OrgaoService');
-const { formatCurrency, formatCpf } = require('../../../common/helpers');
+const { formatToFloat, customCpf } = require('../../../common/helpers');
 
-function getRecebimento(line) {
-  const recebimento = {
-    orgao: line[7].trim(),
-    ano: line[5].substr(6, 4),
-    mes: line[5].substr(3, 2),
-    matricula: line[2].slice(-8), //os últimos 8 caracteres
-    cpf: formatCpf(line[3]),
-    nome: line[1].trim(),
-    rubrica: line[17],
-    parcelas: line[9],
-    valor: formatCurrency(line[12]),
-    status: line[13].toUpperCase(),
-    situacaoservidor: line[19]
-  };
-
-  return recebimento;
-}
+let orgaosList = [];
 
 async function insertRegister(line) {
-  const recebimento = getRecebimento(line);
-  const orgaoExiste = await OrgaoService.getByNome(recebimento.orgao);
+  const tresPrimeirosCaracteres = line.substr(0, 3);
+  let codigoDoOrgao = tresPrimeirosCaracteres;
 
-  if (!orgaoExiste) {
-    await OrgaoService.createOrgao(recebimento.orgao);
+  if (tresPrimeirosCaracteres === '990') {
+    codigoDoOrgao = line.substr(62, 3);
   }
+
+  const orgaoObj = orgaosList.find((orgao) => orgao.codigo === codigoDoOrgao);
+
+  const recebimento = {
+    orgao: orgaoObj ? orgaoObj.sigla : 'GDF',
+    ano: line.substr(3, 4),
+    mes: line.substr(7, 2),
+    matricula: line.substr(9, 8),
+    cpf: customCpf(line.substr(17, 12)),
+    nome: line.substr(29, 33).trim(),
+    controle: line.substr(62, 3),
+    lotacao: line.substr(65, 12),
+    rubrica: line.substr(77, 5),
+    parcela: line.substr(82, 3),
+    valor: formatToFloat(line.substr(85, 11))
+  };
 
   return await RecebimentoService.insertRecebimento(recebimento);
 }
 
 async function saveToDB(lines) {
-  //A linha 0 é o cabeçalho
-
-  const dadosPrimeiraLinha = lines[1].split(';');
-  const recebimento = getRecebimento(dadosPrimeiraLinha);
-
-  //  console.log(recebimento);
   const recebimentoExist = await RecebimentoService.getByPeriod(
-    recebimento.ano,
-    recebimento.mes,
-    recebimento.rubrica
+    lines[0].substr(3, 4),
+    lines[0].substr(7, 2),
+    lines[0].substr(77, 5)
   );
 
   if (recebimentoExist <= 0) {
-    for (var line = 1; line < lines.length - 1; line++) {
-      await insertRegister(lines[line].split(';'));
+    for (var line = 0; line < lines.length - 1; line++) {
+      await insertRegister(lines[line]);
     }
   }
 }
@@ -55,6 +49,8 @@ async function processFile(file) {
   const { createReadStream } = await file;
   const stream = await createReadStream(file.filename, 'utf8');
   let data = '';
+  
+
 
   stream
     .on('data', (chunk) => (data += chunk))
@@ -76,7 +72,7 @@ module.exports = {
     recebimentoPeriodo: async (_, { ano, mes }) =>
       await RecebimentoService.getByPeriodFull(ano, mes),
     recebimentoFiltro: async (_, { filtro }) => {
-      const { mes, ano, orgao, rubrica, matricula, status } = filtro;
+      const { mes, ano, orgao, rubrica, matricula } = filtro;
 
       let newFilter = { mes, ano };
       if (orgao) {
@@ -88,9 +84,6 @@ module.exports = {
       if (matricula) {
         newFilter = { ...newFilter, matricula };
       }
-      if (status) {
-        newFilter = { ...newFilter, status };
-      }
 
       return await RecebimentoService.getFilters(newFilter);
     },
@@ -101,18 +94,15 @@ module.exports = {
     recebimentoMatricula: async (_, { matricula }) =>
       await RecebimentoService.getByMatricula(matricula),
 
-    inadimplentes: async (_, { ano, mes }) =>
-      await RecebimentoService.getInadimplentes(ano, mes),
+    inadimplentes: async (_, { ano, mes }) => await RecebimentoService.getInadimplentes(ano, mes),
 
-    totaisMensais: async (_, { ano }) =>
-      await RecebimentoService.getTotais(ano),
-    totalMensalPorEmpresa: async (_, { ano, mes }) =>
-      await RecebimentoService.getTotaisPorEmpresa(ano, mes)
+    totaisMensais: async (_, { ano }) => await RecebimentoService.getTotais(ano),
+    totalMensalPorEmpresa: async (_, { ano, mes }) => await RecebimentoService.getTotaisPorEmpresa(ano, mes),
   },
   Mutation: {
     uploadFile: async (_, { file }) => {
       //const { filename, createReadStream } = await file;
-      //orgaosList = await OrgaoService.getAll();
+      orgaosList = await OrgaoService.getAll();
 
       const upload = await processFile(file);
       return upload;

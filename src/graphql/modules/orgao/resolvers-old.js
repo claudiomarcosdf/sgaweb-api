@@ -7,8 +7,8 @@ module.exports = {
   },
 
   Mutation: {
-    createOrgao: async (_, { nome }) =>
-      await OrgaoService.createOrgao(nome),
+    createOrgao: async (_, { codigo, sigla, nome }) =>
+      await OrgaoService.createOrgao(codigo, sigla, nome),
     updateOrgao: async (_, { id, data }) =>
       await OrgaoService.updateOrgao(id, data),
     deleteOrgao: async (_, { id }, context) => {

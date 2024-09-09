@@ -15,11 +15,11 @@ type Recebimento {
   matricula: String
   cpf: String
   nome: String
+  controle: String
+  lotacao: String
   rubrica: String
   parcela: String
   valor: Float
-  status: String
-  situacaoservidor: String
 }
 
 type Inadimplentes {
@@ -40,11 +40,11 @@ input RecebimentoInput {
   matricula: String
   cpf: String
   nome: String
+  controle: String
+  lotacao: String
   rubrica: String
   parcela: String
   valor: Float
-  status: String
-  situacaoservidor: String  
 }
 
 input FiltroInput {
@@ -53,7 +53,6 @@ input FiltroInput {
   orgao: String
   rubrica: String
   matricula: String
-  status: String
 }
 
 type Query {

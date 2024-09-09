@@ -5,15 +5,17 @@ const CreateError = require('../errors/CreateError');
 class OrgaoService {
   getAll = async () => {
     const result = await Orgao.find();
-    return result.sort((a, b) => a.nome.localeCompare(b.nome));
+    return result.sort((a, b) => a.sigla.localeCompare(b.sigla));
   };
 
   getById = async (id) => await Orgao.findById({ _id: id });
 
+  getByCodigo = async (codigo) => await Orgao.findOne({ codigo: codigo });
+
   getByNome = async (nome) => await Orgao.findOne({ nome: nome });
 
-  createOrgao = async (nome) => {
-    const orgao = new Orgao({ nome });
+  createOrgao = async (codigo, sigla, nome) => {
+    const orgao = { codigo, sigla, nome };
     try {
       return await orgao.save();
     } catch (error) {

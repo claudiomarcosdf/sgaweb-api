@@ -31,6 +31,13 @@ exports.formatToFloat = function (valueString) {
   return finalValue;
 };
 
+exports.formatCurrency = function (valueString) {
+  // 17,98
+  if (!valueString) return 0;
+
+  return parseFloat(valueString.replace(',', '.'));
+}
+
 exports.numberOnly = function (valueString) {
   return valueString.replace(/[^0-9]/g, '');
 }
